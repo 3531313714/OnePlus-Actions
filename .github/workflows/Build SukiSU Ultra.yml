@@ -564,16 +564,6 @@ jobs:
             ```
             EOF
 
-      - name: "📤 Upload to telegram | 上传至Telegram群组"
-        if: ${{secrets.BOT_TOKEN != ""}}
-        uses: puernya/tg-bot-upload@v1
-        with:
-          bot-id: ${{ secrets.BOT_TOKEN }}
-          chat-id: ${{ secrets.CHATID }}
-          topic-id: ${{ secrets.MESSAGE_THREAD_ID }} 
-          file-path: "${{ steps.set_name.outputs.ARTIFACT_NAME }}.zip"
-          caption-path: release.txt
-
       # - name: "🤖 Get bot script | 获取 bot 脚本"
         # uses: actions/checkout@v4
         # with:
